@@ -1,9 +1,10 @@
-import 'package:ecom_admin/Addproductpages/addcategory.dart';
+//import 'package:ecom_admin/Addproductpages/editcategory.dart';
 import 'package:ecom_admin/Login/contactus.dart';
-import 'package:ecom_admin/Main/category.dart';
+import 'package:ecom_admin/Main/addsliderimages.dart';
+import 'file:///E:/Flutter/ecom_admin/lib/Categorypages/category.dart';
 import 'package:ecom_admin/Main/completedorders.dart';
 import 'package:ecom_admin/Main/rejectedorders.dart';
-import 'package:ecom_admin/Main/services.dart';
+import 'file:///E:/Flutter/ecom_admin/lib/Servicescategory/services.dart';
 import 'package:flutter/material.dart';
 
 class pendingrequest extends StatefulWidget {
@@ -33,13 +34,21 @@ class _pendingrequestState extends State<pendingrequest> {
             PopupMenuButton<String>(
               itemBuilder: (context) => [
                 PopupMenuItem(
-                  //value: 1,
+                  //value: 0,
                   child: Text(
                     "Add Slider Images",
                     //style: TextStyle(fontWeight: FontWeight.w700),
                   ),
+
                 ),
+
               ],
+              onSelected: (result) {
+                if(result == 0){
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => addsliderimages()));
+                }
+              },
             )
           ],
         ),
